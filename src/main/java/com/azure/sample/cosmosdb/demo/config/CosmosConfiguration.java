@@ -20,6 +20,8 @@ import org.springframework.context.annotation.PropertySource;
 public class CosmosConfiguration extends AbstractCosmosConfiguration {
     private CosmosProperties properties;
 
+    private String SECRET_KEY = "123456789aB"
+
     CosmosConfiguration(CosmosProperties properties){
         this.properties = properties;
     }
@@ -29,7 +31,7 @@ public class CosmosConfiguration extends AbstractCosmosConfiguration {
        
         return new CosmosClientBuilder()
             .endpoint(properties.getUri())
-            .key(properties.getKey())
+            .key(SECRET_KEY)
             .directMode(DirectConnectionConfig.getDefaultConfig());
     }
 
