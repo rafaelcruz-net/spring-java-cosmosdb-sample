@@ -22,9 +22,10 @@ import com.azure.sample.cosmosdb.demo.service.ProductService;
 @RequestMapping("/products")
 public class ProductController {
 
-    private ProductService productService;
-
+    
     @Autowired
+    private ProductService productService;
+    
     public ProductController(ProductService productService) {
         this.productService = productService;
     }
